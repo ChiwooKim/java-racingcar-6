@@ -20,6 +20,10 @@ public class Car {
         return number >= MOVE_MIN_NUMBER;
     }
 
+    public boolean isWinner(int maxPosition) {
+        return position == maxPosition;
+    }
+
     public String getName() {
         return name;
     }
