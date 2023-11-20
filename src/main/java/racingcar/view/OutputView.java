@@ -27,4 +27,8 @@ public class OutputView {
         System.out.printf("%s : ", car.getName());
         System.out.printf("-".repeat(car.getPosition()));
     }
+
+    public void printSpace() {
+        System.out.println();
+    }
 }
