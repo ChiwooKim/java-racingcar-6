@@ -3,7 +3,7 @@ package racingcar.view;
 import camp.nextstep.edu.missionutils.Console;
 import java.util.Arrays;
 import java.util.List;
-import racingcar.util.validator.AttemptsNumbersValidator;
+import racingcar.util.validator.AttemptsNumberValidator;
 import racingcar.util.validator.CarNamesValidator;
 import racingcar.util.validator.Constant;
 import racingcar.util.validator.Validator;
@@ -15,7 +15,7 @@ public class InputView {
 
     private InputView() {
         this.namesValidator = new CarNamesValidator();
-        this.attempsValidator = new AttemptsNumbersValidator();
+        this.attempsValidator = new AttemptsNumberValidator();
     }
 
     public static InputView getInstance() {
