@@ -1,9 +1,7 @@
 package racingcar.controller;
 
-import java.util.List;
-import racingcar.domain.car.Car;
 import racingcar.domain.car.Cars;
-import racingcar.util.RandomNumberGenerator;
+import racingcar.service.RacingService;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -11,33 +9,34 @@ public class RacingController {
 
     private final InputView inputView;
     private final OutputView outputView;
-    private final Cars cars;
+    private final RacingService racingService;
 
     public RacingController(InputView inputView, OutputView outputView) {
         this.inputView = inputView;
         this.outputView = outputView;
-        this.cars = new Cars();
+        this.racingService = new RacingService();
     }
 
     public void play() {
+        startRacing(readyForRacing());
+        outputView.printWinners(racingService.winPrize());
+    }
+
+    private int readyForRacing() {
         outputView.printCarNamesInput();
-        List<String> carNames = inputView.readCarNames();
+        racingService.getReady(inputView.readCarNames());
         outputView.printAttemptsInput();
-        int attemptsNumber = inputView.readAttemptsNumber();
+        return inputView.readAttemptsNumber();
+    }
 
-        for (String carName : carNames) {
-            cars.addCar(new Car(carName));
-        }
-
+    private void startRacing(int attemptsNumber) {
+        outputView.printExecutionResult();
         int count = 0;
         while (count < attemptsNumber) {
-            for (Car car : cars.getCars()) {
-                car.move(RandomNumberGenerator.createRandomNumber());
-                outputView.printResult(car);
-            }
+            Cars result = racingService.doRacing();
+            outputView.printResult(result);
             outputView.printSpace();
             count++;
         }
-        outputView.printWinners(cars);
     }
 }
