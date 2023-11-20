@@ -21,6 +21,12 @@ public class InputView {
         return carNames;
     }
 
+    public int readAttemptsNumber() {
+        System.out.println("시도할 회수는 몇회인가요?");
+        String input = input();
+        return Integer.parseInt(input);
+    }
+
     private String input() {
         return Console.readLine();
     }
