@@ -1,6 +1,7 @@
 package racingcar.view;
 
 import racingcar.domain.car.Car;
+import racingcar.domain.car.Cars;
 
 public class OutputView {
 
@@ -24,11 +25,14 @@ public class OutputView {
     }
 
     public void printResult(Car car) {
-        System.out.printf("%s : ", car.getName());
-        System.out.printf("-".repeat(car.getPosition()));
+        System.out.printf("%s : %s%n", car.getName(), "-".repeat(car.getPosition()));
     }
 
     public void printSpace() {
         System.out.println();
+    }
+
+    public void printWinners(Cars cars) {
+        System.out.printf("최종 우승자 : %s%n", String.join(", ", cars.getWinners()));
     }
 }
