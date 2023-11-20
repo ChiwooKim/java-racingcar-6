@@ -38,6 +38,6 @@ public class RacingController {
             outputView.printSpace();
             count++;
         }
-
+        outputView.printWinners(cars);
     }
 }
