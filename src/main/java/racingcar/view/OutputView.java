@@ -1,5 +1,7 @@
 package racingcar.view;
 
+import racingcar.domain.car.Car;
+
 public class OutputView {
 
     private OutputView() {
@@ -19,5 +21,10 @@ public class OutputView {
 
     public void printExecutionResult() {
         System.out.printf("%n실행결과%n");
+    }
+
+    public void printResult(Car car) {
+        System.out.printf("%s : ", car.getName());
+        System.out.printf("-".repeat(car.getPosition()));
     }
 }
