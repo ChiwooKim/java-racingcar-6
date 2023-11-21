@@ -3,6 +3,7 @@ package racingcar.util.validator;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
+import racingcar.util.Constant;
 
 public class CarNamesValidator extends Validator {
 

@@ -1,4 +1,4 @@
-package racingcar.util.validator;
+package racingcar.util;
 
 public class Constant {
 

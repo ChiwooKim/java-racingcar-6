@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import racingcar.util.validator.AttemptsNumberValidator;
 import racingcar.util.validator.CarNamesValidator;
-import racingcar.util.validator.Constant;
+import racingcar.util.Constant;
 import racingcar.util.validator.Validator;
 
 public class InputView {
